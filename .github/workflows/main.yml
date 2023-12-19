@@ -59,3 +59,16 @@ jobs:
         PASSWORD: ${{ secrets.PASSWORD }}
       run: |
         python main.py
+
+    - name: Send email
+      uses: dawidd6/action-send-mail@v3.12.0
+      with:
+        serveraddress: smtp.163.com
+        serverport: 465
+        username: ${{ secrets.MAILUSERNAME }}
+        password: ${{ secrets.MAILPASSWORD }}
+        subject: 自动大学习提醒
+        body: file://result.txt
+        to: yifeng.ruan@gmail.com
+        from: GitHub Actions
+        content_type: text/txt

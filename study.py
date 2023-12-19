@@ -2,11 +2,9 @@ import json
 import re
 import time
 import traceback
-
 import requests
 
 from utility import encrypt, cap_recognize
-
 
 def study(username, password, ua):
     # return 1:success;0:fail

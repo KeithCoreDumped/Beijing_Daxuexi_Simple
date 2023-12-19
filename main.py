@@ -3,8 +3,18 @@ import time
 import sys
 from study import study
 from fake_useragent import UserAgent
+import builtins
 
-
+f = open('result.txt','wb',encoding='utf-8')
+old_print = builtins.print
+def hook_print():
+    def my_print(*args, **kwargs):
+        output = ' '.join(map(str, args)) + '\n'
+        f.write(output.encode('utf-8'))
+        old_print(*args, **kwargs)
+    builtins.print = my_print
+def unhook_print():
+    builtins.print = old_print
 
 def getAccounts():
     result = []
@@ -32,7 +42,7 @@ def getAccounts():
     return result
 
 
-ua = UserAgent()
+ua = UserAgent().random
 
 # # Windows Automated Task Management
 # task_name="Daxuexi_18S4F65D"
@@ -52,7 +62,7 @@ ua = UserAgent()
 #                 exit(1)
 #             create=os.popen(f'''SchTasks /Create /SC DAILY /MO 2 /TN {task_name} /TR "'{sys.executable}' '{os.path.realpath(__file__)}'" /ST 09:00''')
 #             print('创建成功')
-
+hook_print()
 accounts = getAccounts()
 # accounts=[('********', '*********')]
 print(f'账号数量：{len(accounts)}')
