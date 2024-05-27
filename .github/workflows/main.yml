@@ -69,6 +69,6 @@ jobs:
         password: ${{ secrets.MAILPASSWORD }}
         subject: 自动大学习提醒
         body: file://result.txt
-        to: yifeng.ruan@gmail.com
+        to: vinc049@qq.com
         from: GitHub Actions
         content_type: text/txt
