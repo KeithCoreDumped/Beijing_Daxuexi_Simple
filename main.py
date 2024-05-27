@@ -10,7 +10,7 @@ old_print = builtins.print
 def hook_print():
     def my_print(*args, **kwargs):
         output = ' '.join(map(str, args)) + '\n'
-        f.write(output.encode('utf-8'))
+        f.write(output)
         old_print(*args, **kwargs)
     builtins.print = my_print
 def unhook_print():
