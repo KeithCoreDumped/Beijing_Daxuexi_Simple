@@ -85,7 +85,7 @@ jobs:
         # Required mail subject:
         subject: Github Actions 自动大学习提醒
         # Required recipients' addresses:
-        to: vinc049@qq.com
+        to: ${{ secrets.MAIL_SENDTO }}
         # Required sender full name (address can be skipped):
         from: kcd # <user@example.com>
         # Optional plain body:
@@ -103,7 +103,7 @@ jobs:
         # Optional unsigned/invalid certificates allowance:
         #ignore_cert: true
         # Optional converting Markdown to HTML (set content_type to text/html too):
-        convert_markdown: true
+        convert_markdown: false
         # Optional attachments:
         #attachments: attachments.zip,git.diff,./dist/static/*.js
         # Optional priority: 'high', 'normal' (default) or 'low'
