@@ -109,7 +109,7 @@ jobs:
         # Optional priority: 'high', 'normal' (default) or 'low'
         #priority: low
         # Optional nodemailerlog: true/false
-        nodemailerlog: true
+        # nodemailerlog: true
         # Optional nodemailerdebug: true/false if true lognodem will also be set true
-        nodemailerdebug: false
+        # nodemailerdebug: false
         content_type: text/html
