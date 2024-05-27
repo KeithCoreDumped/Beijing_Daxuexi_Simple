@@ -5,7 +5,7 @@ from study import study
 from fake_useragent import UserAgent
 import builtins
 
-f = open('result.txt','rt',encoding='utf-8')
+f = open('result.txt','wt',encoding='utf-8')
 old_print = builtins.print
 def hook_print():
     def my_print(*args, **kwargs):
